@@ -5,13 +5,13 @@
   <td> Edad: </td>
   <dd> {{ age }} </dd>
   <td> Metodo: </td>
-  <dd> algun metodo </dd>
+  <dd> {{ getHeroDescription() }} </dd>
   <td> Capitalizado </td>
-  <dd> nombre capitalizado </dd>
+  <dd> {{ capitalizedName }} </dd>
 </dl>
 
 <div class="buttons">
-  <button class="button is-primary"> Cambiar Nombre </button>
-  <button class="button is-primary"> Cambiar Edad  </button>
-
+  <button class="button is-primary" (click)="changeHero('Spiderman')" *ngIf="name !== 'Spiderman'" > Cambiar Nombre </button>
+  <button class="button is-primary" (click)="changeAge(25)" *ngIf="age !== 25"> Cambiar Edad  </button>
+  <button class="button is-primary" (click)="resetForm()" > Reset  </button>
 </div>

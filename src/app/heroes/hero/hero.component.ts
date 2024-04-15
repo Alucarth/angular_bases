@@ -12,4 +12,21 @@ export class HeroComponent {
   get capitalizedName():string {
     return  this.name.toUpperCase()
   }
+
+  getHeroDescription():string {
+    return ` ${ this.name } - ${ this.age } `;
+  }
+
+  changeHero(name: string ):void {
+    this.name = name;
+  }
+
+  changeAge(age: number):void {
+    this.age = age;
+  }
+
+  resetForm():void {
+    this.name = 'IronMan'
+    this.age = 45
+  }
 }

@@ -1,1 +1,34 @@
-<p>list works!</p>
+
+<div class="notification is-warning" *ngIf="deletedHero; else nothingWasDeleted">
+  <button class="delete"></button>
+  Heroe Borrado <strong> {{ deletedHero }} </strong>
+</div>
+<ng-template #nothingWasDeleted>
+  <div class="notification is-info" >
+    <button class="delete"></button>
+    No se a eliminado nada
+  </div>
+</ng-template>
+
+<div class="buttons" *ngIf="heroNames.length > 0">
+  <button class="button is-link" (click)="removeLastHero()">Elimninar Ultimo Heroe</button>
+</div>
+
+<nav class="panel">
+  <p class="panel-heading">Lista de Héroes</p>
+
+
+
+  <a class="panel-block" *ngFor="let name of heroNames">
+    <span class="panel-icon">
+      <i class="bx bx-user" aria-hidden="true"></i>
+    </span>
+    {{ name }}
+  </a>
+
+  <div class="panel-block">
+    <!-- <button class="button is-link is-outlined is-fullwidth">
+      Reset all filters
+    </button> -->
+  </div>
+</nav>
