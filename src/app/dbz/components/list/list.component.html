@@ -1,0 +1,23 @@
+<article class="panel">
+  <p class="panel-heading">Lista de Héroes</p>
+
+  <a class="panel-block  " [ngClass]="{'has-background-dark has-text-light': isLast, 'has-background-primary has-text-dark': isFirst}"  *ngFor="let character of charterList; let i = index; let isLast = last; let isFirst = first">
+    <div class="is-flex is-justify-content-space-between  is-align-content-center " style="width: 100%;">
+      <div class="is-flex">
+        <span class="has-text-info pr-2"> {{ i+1 }}</span>
+        <span class="panel-icon">
+          <i class='bx bxs-user is-normal'></i>
+        </span>
+        <div>
+          {{ character.name}} - <span class="icon is-small "><i class='bx bxs-shield-plus has-text-primary '></i>  </span>
+          Power:
+          {{character.power}}
+        </div>
+      </div>
+      <div class="is-flex  is-align-content-flex-end">
+        <i class='bx bxs-trash-alt' (click)="onDeleteCharacter(i)" ></i>
+      </div>
+    </div>
+  </a>
+
+</article>

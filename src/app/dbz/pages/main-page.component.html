@@ -1,0 +1,11 @@
+<h1> Main Page DBZ</h1>
+<hr>
+<div class="grid">
+  <div class="cell">
+    <!-- onDelete -->
+    <dbz-list [charterList]="characters"  (newCharacterId)="onDeleteCharacter($event)" ></dbz-list>
+  </div>
+  <div class="cell">
+    <dbz-add-character (onNewChararcter)="onNewCharacter($event)" ></dbz-add-character>
+  </div>
+</div>
